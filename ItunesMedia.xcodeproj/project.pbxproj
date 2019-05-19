@@ -12,6 +12,8 @@
 		1FF800B12291FB5F00672598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF800AF2291FB5F00672598 /* Main.storyboard */; };
 		1FF800B32291FB6200672598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF800B22291FB6200672598 /* Assets.xcassets */; };
 		1FF800B62291FB6200672598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF800B42291FB6200672598 /* LaunchScreen.storyboard */; };
+		1FF800BE2291FDE800672598 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF800BD2291FDE800672598 /* Playlist.swift */; };
+		1FF800C02292143A00672598 /* ContentWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF800BF2292143A00672598 /* ContentWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		1FF800B22291FB6200672598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FF800B52291FB6200672598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FF800B72291FB6200672598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FF800BD2291FDE800672598 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		1FF800BF2292143A00672598 /* ContentWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 			children = (
 				1FF800AB2291FB5F00672598 /* AppDelegate.swift */,
 				1FF800AD2291FB5F00672598 /* ViewController.swift */,
+				1FF800BF2292143A00672598 /* ContentWebViewController.swift */,
 				1FF800AF2291FB5F00672598 /* Main.storyboard */,
 				1FF800B22291FB6200672598 /* Assets.xcassets */,
 				1FF800B42291FB6200672598 /* LaunchScreen.storyboard */,
 				1FF800B72291FB6200672598 /* Info.plist */,
+				1FF800BD2291FDE800672598 /* Playlist.swift */,
 			);
 			path = ItunesMedia;
 			sourceTree = "<group>";
@@ -136,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FF800AE2291FB5F00672598 /* ViewController.swift in Sources */,
+				1FF800C02292143A00672598 /* ContentWebViewController.swift in Sources */,
 				1FF800AC2291FB5F00672598 /* AppDelegate.swift in Sources */,
+				1FF800BE2291FDE800672598 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
