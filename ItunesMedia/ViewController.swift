@@ -11,15 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     var playlists: [Playlist] = []
+    var urlString: String = ""
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        requestPlaylist(playlistName: "hot-tracks")
+        requestPlaylist(urlString: urlString)
     }
-
-
 }
 
 // MARK: - Request
@@ -36,7 +35,8 @@ extension ViewController {
                         do {
                             if let json = try? JSONSerialization.jsonObject(with: response, options: []) {
                                 if let jsonDict = json as? [String: Any] {
-                                    if let feedDict = jsonDict["feed"] as? [String: Any], let resultsDict = feedDict["results"] as? [[String: Any]] {
+                                    if let feedDict = jsonDict["feed"] as? [String: Any], let title = feedDict["title"] as? String, let resultsDict = feedDict["results"] as? [[String: Any]] {
+                                        self.title = title
                                         let data = try JSONSerialization.data(withJSONObject: resultsDict, options: .prettyPrinted)
                                         let playlists = try JSONDecoder().decode([Playlist].self, from: data)
                                         
@@ -58,8 +58,8 @@ extension ViewController {
         }
     }
     
-    @objc func requestPlaylist(playlistName: String) {
-        let url = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/\(playlistName)/all/100/explicit.json")
+    @objc func requestPlaylist(urlString: String) {
+        let url = URL(string:urlString)
         loadDataWithURL(url) { (results, error) in
             if let resultsDict = results {
                 self.playlists = resultsDict
@@ -69,7 +69,7 @@ extension ViewController {
                 let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
 
                 let reloadAction = UIAlertAction(title: "Fetch", style: .default, handler: { (action) in
-                    self.requestPlaylist(playlistName: "")
+                    self.requestPlaylist(urlString: urlString)
                 })
                 alertController.addAction(okAction)
                 alertController.addAction(reloadAction)
