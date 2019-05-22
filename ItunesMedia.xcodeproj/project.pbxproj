@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F75EDE92295B9EA0088F82B /* PlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75EDE82295B9EA0088F82B /* PlayListTableViewCell.swift */; };
 		1F75EDEB2295BC3D0088F82B /* APINetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75EDEA2295BC3D0088F82B /* APINetworking.swift */; };
+		1F75EDEE2295C7D20088F82B /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75EDED2295C7D20088F82B /* WebKit.framework */; };
 		1FF800AC2291FB5F00672598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF800AB2291FB5F00672598 /* AppDelegate.swift */; };
 		1FF800AE2291FB5F00672598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF800AD2291FB5F00672598 /* ViewController.swift */; };
 		1FF800B12291FB5F00672598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF800AF2291FB5F00672598 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		1F75EDE82295B9EA0088F82B /* PlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListTableViewCell.swift; sourceTree = "<group>"; };
 		1F75EDEA2295BC3D0088F82B /* APINetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworking.swift; sourceTree = "<group>"; };
+		1F75EDED2295C7D20088F82B /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		1FF800A82291FB5F00672598 /* ItunesMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF800AB2291FB5F00672598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF800AD2291FB5F00672598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,17 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F75EDEE2295C7D20088F82B /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F75EDEC2295C7D10088F82B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F75EDED2295C7D20088F82B /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1FF8009F2291FB5F00672598 = {
 			isa = PBXGroup;
 			children = (
 				1FF800AA2291FB5F00672598 /* ItunesMedia */,
 				1FF800A92291FB5F00672598 /* Products */,
+				1F75EDEC2295C7D10088F82B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
