@@ -19,6 +19,7 @@ import UIKit
 struct Playlist: Decodable {
     let identifier: String
     let name: String
+	let artistName: String
     let kind: String
     let artworkURL: String
     let url: String
@@ -29,6 +30,7 @@ struct Playlist: Decodable {
         case kind
         case artworkURL = "artworkUrl100"
         case url
+		case artistName
     }
     
     init(from decoder: Decoder) throws {
@@ -38,5 +40,6 @@ struct Playlist: Decodable {
         kind = try values.decode(String.self, forKey: .kind)
         artworkURL = try values.decode(String.self, forKey: .artworkURL)
         url = try values.decode(String.self, forKey: .url)
+		artistName = try values.decode(String.self, forKey: .artistName)
     }
 }

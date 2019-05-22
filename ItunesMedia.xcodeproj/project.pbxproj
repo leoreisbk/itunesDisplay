@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F75EDE92295B9EA0088F82B /* PlayListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75EDE82295B9EA0088F82B /* PlayListTableViewCell.swift */; };
+		1F75EDEB2295BC3D0088F82B /* APINetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75EDEA2295BC3D0088F82B /* APINetworking.swift */; };
 		1FF800AC2291FB5F00672598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF800AB2291FB5F00672598 /* AppDelegate.swift */; };
 		1FF800AE2291FB5F00672598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF800AD2291FB5F00672598 /* ViewController.swift */; };
 		1FF800B12291FB5F00672598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF800AF2291FB5F00672598 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F75EDE82295B9EA0088F82B /* PlayListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListTableViewCell.swift; sourceTree = "<group>"; };
+		1F75EDEA2295BC3D0088F82B /* APINetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINetworking.swift; sourceTree = "<group>"; };
 		1FF800A82291FB5F00672598 /* ItunesMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItunesMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF800AB2291FB5F00672598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF800AD2291FB5F00672598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				1FF800B42291FB6200672598 /* LaunchScreen.storyboard */,
 				1FF800B72291FB6200672598 /* Info.plist */,
 				1FF800BD2291FDE800672598 /* Playlist.swift */,
+				1F75EDE82295B9EA0088F82B /* PlayListTableViewCell.swift */,
+				1F75EDEA2295BC3D0088F82B /* APINetworking.swift */,
 			);
 			path = ItunesMedia;
 			sourceTree = "<group>";
@@ -148,7 +154,9 @@
 				1FF800C02292143A00672598 /* ContentWebViewController.swift in Sources */,
 				1FF800C4229259F600672598 /* FeedTableViewController.swift in Sources */,
 				1FF800AC2291FB5F00672598 /* AppDelegate.swift in Sources */,
+				1F75EDEB2295BC3D0088F82B /* APINetworking.swift in Sources */,
 				1FF800BE2291FDE800672598 /* Playlist.swift in Sources */,
+				1F75EDE92295B9EA0088F82B /* PlayListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

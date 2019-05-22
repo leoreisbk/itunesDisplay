@@ -9,14 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     var playlists: [Playlist] = []
     var urlString: String = ""
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         requestPlaylist(urlString: urlString)
     }
 }
@@ -24,45 +22,12 @@ class ViewController: UIViewController {
 // MARK: - Request
 
 extension ViewController {
-    func loadDataWithURL(_ url: URL?, completion: @escaping (_ results: [Playlist]?, _ error: Error?) -> ()) {
-        let session = URLSession(configuration: URLSessionConfiguration.default)
-        if let url = url {
-            session.dataTask(with: url, completionHandler: { (response, data, error) in
-                DispatchQueue.main.async(execute: { () -> Void in
-                    if error != nil {
-                        completion(nil, error)
-                    } else if let response = response {
-                        do {
-                            if let json = try? JSONSerialization.jsonObject(with: response, options: []) {
-                                if let jsonDict = json as? [String: Any] {
-                                    if let feedDict = jsonDict["feed"] as? [String: Any], let title = feedDict["title"] as? String, let resultsDict = feedDict["results"] as? [[String: Any]] {
-                                        self.title = title
-                                        let data = try JSONSerialization.data(withJSONObject: resultsDict, options: .prettyPrinted)
-                                        let playlists = try JSONDecoder().decode([Playlist].self, from: data)
-                                        
-                                        completion(playlists, nil)
-                                    }
-                                }
-                            }
-                        } catch( let error) {
-                            print(error)
-                        }
-                    } else {
-                        completion(nil, NSError(domain: "ErrorDomain", code: -1, userInfo: [ NSLocalizedDescriptionKey: "Couldn't load Data"]))
-                    }
-                    session.finishTasksAndInvalidate()
-                })
-            }).resume()
-        } else {
-            completion(nil, NSError(domain: "ErrorDomain", code: -2, userInfo: [ NSLocalizedDescriptionKey: "Data URL not found."]))
-        }
-    }
-    
     @objc func requestPlaylist(urlString: String) {
         let url = URL(string:urlString)
-        loadDataWithURL(url) { (results, error) in
+		APINetworking.shared.loadLibraries(url) { (results, title, error) in
             if let resultsDict = results {
                 self.playlists = resultsDict
+				self.title = title
                 self.tableView.reloadData()
             } else {
                 let alertController = UIAlertController(title: "Error", message: "Sorry! There was an error!!", preferredStyle: .alert)
@@ -92,8 +57,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let playlist = playlists[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playlistCell", for: indexPath)
-        cell.textLabel?.text = playlist.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playlistCell", for: indexPath) as! PlayListTableViewCell
+        cell.setupCell(playlist)
         return cell
     }
     
